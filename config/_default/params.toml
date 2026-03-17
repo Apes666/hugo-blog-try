@@ -1,17 +1,17 @@
-# Pages placed under these sections will be shown on homepage and archive page.
+# 这些 section 下的内容会出现在首页和归档页
 mainSections = ["post"]
-# Output page's full content in RSS.
+# RSS 输出完整正文
 rssFullContent = true
 favicon        = "img/favicon.png"
 
-# Accepted values: "default", "lastmod"
-# default = see https://gohugo.io/quick-reference/glossary/#default-sort-order
-# lastmod = sort by last modified date, in descending order
+# accepted values: "default", "lastmod"
+# default: Hugo 默认排序
+# lastmod: 按最后更新时间倒序
 SortBy              = "default"
 
 [footer]
     since      = 2020
-    customText = ""
+    customText = "基于 Hugo 与 Stack 主题构建"
 
 [dateFormat]
     published   = ":date_full"
@@ -19,7 +19,7 @@ SortBy              = "default"
 
 [sidebar]
     emoji    = "🍥"
-    subtitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    subtitle = "一个使用 Hugo 与 Stack 主题搭建的中文示例站点。"
     avatar   = "img/avatar.png"
 
 [article]
@@ -29,7 +29,7 @@ SortBy              = "default"
 
     [article.license]
         enabled = true
-        default = "Licensed under CC BY-NC-SA 4.0"
+        default = "本文采用 CC BY-NC-SA 4.0 许可协议"
 
 [widgets]
     homepage = [
@@ -48,10 +48,10 @@ SortBy              = "default"
     toggle  = true
     default = "auto"
 
-## Comments
+## 评论系统
 [comments]
     enabled  = true
     provider = "disqus"
 
-    # See all the available configurations at https://github.com/CaiJimmy/hugo-theme-stack/blob/master/config/_default/params.toml
-    # Copy the configurations you need from there and paste it here.
+    # 更多可选配置见主题默认参数文件
+    # 按需复制到这里覆盖即可

@@ -1,47 +1,68 @@
 <img align="right" width="150" alt="logo" src="https://user-images.githubusercontent.com/5889006/190859553-5b229b4f-c476-4cbd-928f-890f5265ca4c.png">
 
-# Hugo Theme Stack Starter Template
+# Hugo Stack 中文博客
 
-This is a quick start template for [Hugo theme Stack](https://github.com/CaiJimmy/hugo-theme-stack). It uses [Hugo modules](https://gohugo.io/hugo-modules/) feature to load the theme.
+这是一个基于 [Hugo Theme Stack](https://github.com/CaiJimmy/hugo-theme-stack) 的博客站点，使用 [Hugo Modules](https://gohugo.io/hugo-modules/) 引入主题。
 
-It comes with a basic theme structure and configuration. GitHub action has been set up to deploy the theme to a public GitHub page automatically. Also, there's a cron job to update the theme automatically everyday.
+## 本地开发
 
-## Video Tutorial
+确保本机已经安装：
 
-In case you got lost during the setup process, here's a video tutorial that setups a new Hugo site using this template, and deploys it to GitHub Pages: https://www.youtube.com/watch?v=8qDdQQ6Ifxo
+- Git
+- Go
+- Hugo extended
 
-## Get started
+常用命令：
 
-1. Click *Use this template*, and create your repository as `<username>.github.io` on GitHub. (You can also use a different repository name, but then the resulting website will be available at `https://<username>.github.io/<repository-name>`. )
-![Step 1](https://user-images.githubusercontent.com/5889006/156916624-20b2a784-f3a9-4718-aa5f-ce2a436b241f.png)
+```bash
+hugo server -D
+hugo --cleanDestinationDir
+```
 
-2. Once the repository is created, create a GitHub codespace associated with it.
-![Create codespace](https://user-images.githubusercontent.com/5889006/156916672-43b7b6e9-4ffb-4704-b4ba-d5ca40ffcae7.png)
+`hugo server -D` 用于本地预览，`hugo --cleanDestinationDir` 用于生成干净的静态产物。
 
-3. While waiting for the codespace to be created, go to `Settings` -> `Pages` of your newly created repository, and set `Build and deployment` -> `Source` to `GitHub Actions`.
-![Change build and deployment source](https://github.com/user-attachments/assets/192459bf-25d8-441e-8029-c108d789e449)
+## 项目结构
 
-4. After the codespace is created, you can test that the site is built successfully by running `hugo server` in the terminal and see your new site in action. 
+```text
+.
+├── config/_default/      # Hugo 配置拆分目录
+├── content/              # 站点内容：文章、页面、分类、标签
+├── assets/               # 图片、SCSS 等资源
+├── public/               # Hugo 构建后的静态文件
+├── resources/            # Hugo 资源缓存
+├── go.mod / go.sum       # Hugo Module 依赖
+└── README.md             # 项目说明
+```
 
-5. Check `config` folder for the configuration files. You can edit them to suit your needs. Make sure to update the `baseurl` property in `config/_default/config.toml` to your site's URL. For example, if your new repository is named `my-blog`, then the `baseurl` should be `https://<username>.github.io/my-blog/`.
+几个最重要的目录和文件：
 
-6. Once you're done editing the site, just commit it and push it. GitHub action will deploy the site automatically to GitHub page asociated with the repository.
+- `config/_default/config.toml`：站点基础配置，例如标题、语言、分页、`baseurl`
+- `config/_default/languages.toml`：语言定义，决定站点启用哪些语言
+- `config/_default/params.toml`：Stack 主题参数，例如侧栏、文章信息、组件、评论系统
+- `config/_default/menu.toml`：全局菜单和社交链接
+- `config/_default/module.toml`：主题模块入口，这个项目通过它加载 `hugo-theme-stack`
+- `content/_index.md`：首页配置
+- `content/post/`：博客文章，每篇文章通常使用 page bundle 目录结构
+- `content/page/`：独立页面，例如搜索、归档、友情链接
+- `content/categories/` 和 `content/tags/`：taxonomy 的元信息页，可以给分类/标签定义中文标题、描述和样式
 
----
+## 本地化思路
 
-In case you don't want to use GitHub codespace, you can also run this template in your local machine. **You need to install Git, Go and Hugo extended locally.** For more information, check official Hugo documentation: https://gohugo.io/installation/
+这个项目的本地化分成两层：
 
-## Update theme manually
+1. 主题界面文案  
+   由 `config/_default/config.toml` 里的 `defaultContentLanguage` 控制，Stack 主题内置了中文 i18n。
 
-Run:
+2. 站点实际内容  
+   由 `content/` 下的 Markdown 文件控制，包括页面标题、菜单名称、文章正文、分类标签名称等。
+
+如果你后面要继续做双语站点，可以在 `config/_default/languages.toml` 增加其他语言，再为内容文件增加语言后缀，例如 `index.en.md`、`index.zh.md`。
+
+## 更新主题
 
 ```bash
 hugo mod get -u github.com/CaiJimmy/hugo-theme-stack/v4
 hugo mod tidy
 ```
 
-> This starter template has been configured with `v4` version of theme. Due to the limitation of Go module, once the `v4` or up version of theme is released, you need to update the theme manually. (Modifying `config/module.toml` file)
-
-## Deploy to another static page hostings
-
-Check official Hugo documentation: https://gohugo.io/host-and-deploy/
+主题版本由 `config/_default/module.toml` 管理。

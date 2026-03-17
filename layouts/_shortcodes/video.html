@@ -1,0 +1,15 @@
+{{- $src := .Get "src" | default (.Get 0) -}}
+<div class="video-wrapper">
+    <video
+        controls
+        src="{{- $src -}}"
+        {{ with .Get "poster" }}poster="{{- . -}}"{{ end }}
+        {{ if eq (.Get "autoplay") "true" }}autoplay{{ end }}
+        {{ if eq (.Get "muted") "true" }}muted{{ end }}
+    >
+        <p>
+            当前浏览器不支持 HTML5 视频。你也可以直接访问
+            <a href="{{- $src -}}">视频链接</a>。
+        </p>
+    </video>
+</div>

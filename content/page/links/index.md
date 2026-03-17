@@ -1,8 +1,9 @@
 ---
-title: Links
+title: 链接
+slug: links
 links:
   - title: GitHub
-    description: GitHub is the world's largest software development platform.
+    description: GitHub 是全球最大的代码托管与协作平台之一。
     website: https://github.com
     image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
 menu:
@@ -14,20 +15,20 @@ menu:
 comments: false
 ---
 
-To use this feature, add `links` section to frontmatter.
+要启用这个页面，只需要在 front matter 中添加 `links` 字段。
 
-This page's frontmatter:
+当前页面的 front matter 示例：
 
 ```yaml
 links:
   - title: GitHub
-    description: GitHub is the world's largest software development platform.
+    description: GitHub 是全球最大的代码托管与协作平台之一。
     website: https://github.com
     image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
   - title: TypeScript
-    description: TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
+    description: TypeScript 是 JavaScript 的类型化超集，最终会编译成普通 JavaScript。
     website: https://www.typescriptlang.org
     image: ts-logo-128.jpg
 ```
 
-`image` field accepts both local and external images.
+`image` 字段既支持本地图片，也支持外链图片。
