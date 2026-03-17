@@ -2,7 +2,7 @@
 mainSections = ["post"]
 # RSS 输出完整正文
 rssFullContent = true
-favicon        = "img/favicon.png"
+favicon        = ""
 
 # accepted values: "default", "lastmod"
 # default: Hugo 默认排序
@@ -11,21 +11,24 @@ SortBy              = "default"
 
 [footer]
     since      = 2020
-    customText = "基于 Hugo 与 Stack 主题构建"
+    customText = ""
 
 [dateFormat]
     published   = ":date_full"
     lastUpdated = ":date_full"
 
 [sidebar]
-    emoji    = "🍥"
-    subtitle = "一个使用 Hugo 与 Stack 主题搭建的中文示例站点。"
-    avatar   = "img/avatar.png"
+    emoji    = ""
+    subtitle = "APES NOT DEAD"
+    avatar   = "img/avatar.jpg"
 
 [article]
     headingAnchor = false
     math          = false
     readingTime   = true
+
+    [article.list]
+        showTags = true
 
     [article.license]
         enabled = true
@@ -50,7 +53,7 @@ SortBy              = "default"
 
 ## 评论系统
 [comments]
-    enabled  = true
+    enabled  = false
     provider = "disqus"
 
     # 更多可选配置见主题默认参数文件

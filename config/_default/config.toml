@@ -1,7 +1,7 @@
 # 部署前请改成自己的站点地址
 baseurl      = "https://blog.060216.xyz/"
 languageCode = "zh-cn"
-title        = "Hugo Stack 中文博客"
+title        = "Sapiens Note"
 
 # 主题界面文案使用 Hugo i18n，Stack 主题内置的是 `zh.toml`
 defaultContentLanguage = "zh"
@@ -9,8 +9,7 @@ defaultContentLanguage = "zh"
 # 中文站点需要启用 CJK 统计，否则摘要和字数统计会不准确
 hasCJKLanguage = true
 
-# 使用评论系统前请改成自己的 Disqus shortname
-disqusShortname = "hugo-theme-stack"
+disqusShortname = ""
 
 [pagination]
     pagerSize = 5

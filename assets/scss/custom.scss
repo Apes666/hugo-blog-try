@@ -1,3 +1,36 @@
 /*
     You can add your own custom styles here.
 */
+
+.section-card--hero {
+    align-items: stretch;
+}
+
+.section-card--hero .section-image {
+    width: 42%;
+    max-width: 460px;
+    min-width: 280px;
+}
+
+.section-card--hero .section-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+    border-radius: var(--card-border-radius);
+    object-fit: cover;
+}
+
+@media (max-width: 767px) {
+    .section-card--hero {
+        flex-direction: column;
+    }
+
+    .section-card--hero .section-image {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .section-card--hero .section-image img {
+        min-height: 180px;
+    }
+}
