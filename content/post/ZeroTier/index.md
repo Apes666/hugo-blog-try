@@ -4,11 +4,11 @@ description: ""
 date: 2026-03-20T18:16:33+08:00
 lastmod: 2026-03-20T18:16:33+08:00
 slug: "ZeroTier"
-draft: true
+draft: false
 
 # 图床封面可以直接写完整 URL，例如：
 # image: "https://img.example.com/blog/2026/03/cover.jpg"
-image: ""
+image: "https://picr2.060216.xyz/3297359d3aac4dabaa77df2104339369.webp"
 
 # 每篇文章建议 1-2 个分类，解决“这篇属于什么主题”
 categories: [Tech]
