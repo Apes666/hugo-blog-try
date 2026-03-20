@@ -16,16 +16,17 @@ categories: [Tech]
 # 标签用于关键词检索，建议 3-6 个
 tags: []
 ---
-
-
-# 1. 加入网络（已加入请跳过）
+## 1. 下载软件
+[ZeroTier下载地址](https://www.zerotier.com/download/)
+点击下载地址，根据自己操作系统下载对应版本。
+## 2. 加入网络（已加入请跳过）
 
 打开 **PowerShell（管理员模式）**，复制并运行：
 ```powershell
 zerotier-cli join a581878f7d2e93c3
 ```
 
-# 2. 奔向月球（解决 400ms 延迟的核心）
+## 3. 奔向月球（解决 400ms 延迟的核心）
 
 这一步是告诉你的 ZeroTier：**“别去国外绕路，直接走成都阿里云中转。”** 在同一个窗口继续运行：
 
@@ -34,7 +35,7 @@ zerotier-cli join a581878f7d2e93c3
 zerotier-cli orbit 7764302f8c 7764302f8c
 ```
 
-# 3. 检查是否“上天”成功
+## 4. 检查是否“上天”成功
 
 输入以下命令验证：
 
