@@ -20,10 +20,10 @@ tags: []
 [ZeroTier下载地址](https://www.zerotier.com/download/)
 点击下载地址，根据自己操作系统下载对应版本。
 ## 2. 加入网络（已加入请跳过）
-
+以windows为例
 打开 **PowerShell（管理员模式）**，复制并运行：
 ```powershell
-zerotier-cli join a581878f7d2e93c3
+zerotier-cli join <你的16位网络ID>
 ```
 
 ## 3. 奔向月球（解决 400ms 延迟的核心）
@@ -31,8 +31,8 @@ zerotier-cli join a581878f7d2e93c3
 这一步是告诉你的 ZeroTier：**“别去国外绕路，直接走成都阿里云中转。”** 在同一个窗口继续运行：
 
 ```powershell
-# 注意：后面的 ID 7764302f8c 必须连写两次
-zerotier-cli orbit 7764302f8c 7764302f8c
+# 注意：后面的 Moon ID  必须连写两次
+zerotier-cli orbit <Moon ID> <Moon ID>
 ```
 
 ## 4. 检查是否“上天”成功
@@ -45,6 +45,6 @@ zerotier-cli listpeers
 
 **验收标准：**
 
-- 找到 `7764302f8c` 这一行。
+- 找到对应`服务器的Moon ID` 这一行。
 - 后面 Role 显示的是 **`MOON`**。
 - 延迟（Latency）在 **30-60ms** 之间。
